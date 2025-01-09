@@ -9,8 +9,6 @@ environment:
   winrm_password: Pa$$word1
 
   matrix:
-    - ruby_version: "27"
-      winrm_endpoint: http://localhost:5985/wsman
     - ruby_version: "30"
       winrm_endpoint: http://localhost:5985/wsman
     - ruby_version: "31"
