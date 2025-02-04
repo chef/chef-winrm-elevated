@@ -5,8 +5,8 @@ This gem allows you to break out of the magical WinRM constraints thus allowing 
 
 ## Running commands elevated
 ```ruby
-require 'winrm'
-require 'winrm-elevated'
+require 'chef-winrm'
+require 'chef-winrm-elevated'
 
 conn = WinRM::Connection.new(...
 conn.shell(:elevated) do |shell|
@@ -20,8 +20,8 @@ end
 ### Impersonating a service account
 By passing a `nil` password, winrm-elevated will assume that the command should run as a service account:
 ```ruby
-require 'winrm'
-require 'winrm-elevated'
+require 'chef-winrm'
+require 'chef-winrm-elevated'
 
 conn = WinRM::Connection.new(...
 conn.shell(:elevated) do |shell|
@@ -37,8 +37,8 @@ end
 ### Using an interactive task
 By setting `interactive_logon` to `true`, the scheduled task will be configured to use an interactive logon allowing all command activity to be viewable from a RDP session if logged on as the same user as the winrm credentials:
 ```ruby
-require 'winrm'
-require 'winrm-elevated'
+require 'chef-winrm'
+require 'chef-winrm-elevated'
 
 conn = WinRM::Connection.new(...
 conn.shell(:elevated) do |shell|

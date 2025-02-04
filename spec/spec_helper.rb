@@ -1,5 +1,5 @@
-require 'winrm' unless defined?(WinRM::Connection)
-require 'winrm-elevated'
+require 'chef-winrm' unless defined?(WinRM::Connection)
+require 'chef-winrm-elevated'
 require_relative 'matchers'
 
 # Creates a WinRM connection for integration tests
