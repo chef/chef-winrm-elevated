@@ -14,8 +14,8 @@
 # limitations under the License.
 
 require 'erubi'
-require 'winrm' unless defined?(WinRM::Connection)
-require 'winrm-fs'
+require 'chef-winrm' unless defined?(WinRM::Connection)
+require 'chef-winrm-fs'
 require 'securerandom' unless defined?(SecureRandom)
 require 'stringio'
 
@@ -72,7 +72,7 @@ module WinRM
       private
 
       def upload_elevated_shell_script(script_text)
-        elevated_shell_path = 'c:/windows/temp/winrm-elevated-shell-' + SecureRandom.uuid + '.ps1'
+        elevated_shell_path = 'c:/windows/temp/chef-winrm-elevated-shell-' + SecureRandom.uuid + '.ps1'
         # Prepend the content of the file with an UTF-8 BOM for Windows to read it as such instead of the default
         # Windows-XXXX encoding, and convert script_text accordingly if needed.
         script_text_with_exit = "\uFEFF#{script_text.encode(Encoding::UTF_8)}\r\n$Host.SetShouldExit($LASTEXITCODE)"
@@ -81,7 +81,7 @@ module WinRM
       end
 
       def elevated_shell_script_content
-        IO.read(File.expand_path('../../winrm-elevated/scripts/elevated_shell.ps1', __dir__))
+        IO.read(File.expand_path('../../chef-winrm-elevated/scripts/elevated_shell.ps1', __dir__))
       end
 
       def wrap_in_scheduled_task(script_path, username, password)

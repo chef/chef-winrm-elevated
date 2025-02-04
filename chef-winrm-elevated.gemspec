@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
 
   s.author = ['Shawn Neal']
   s.email = ['sneal@sneal.net']
-  s.homepage = 'https://github.com/WinRb/winrm-elevated'
+  s.homepage = 'https://github.com/chef/chef-winrm-elevated'
 
   s.summary = 'Ruby library for running commands as elevated'
   s.description = 'Ruby library for running commands via WinRM as elevated through a scheduled task'
@@ -21,8 +21,8 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = %w[README.md LICENSE]
 
   s.required_ruby_version = '>= 3.0.0'
-  s.add_runtime_dependency 'chef-winrm', '>= 2.3.10'
-  s.add_runtime_dependency 'chef-winrm-fs', '~> 1.3'
+  s.add_runtime_dependency 'chef-winrm', '>= 2.3.11'
+  s.add_runtime_dependency 'chef-winrm-fs', '>= 1.3.7'
   s.add_runtime_dependency 'erubi', '~> 1.8'
   s.add_development_dependency 'rake', '>= 13.2.1'
   s.add_development_dependency 'rexml'
