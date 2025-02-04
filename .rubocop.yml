@@ -1,5 +1,14 @@
 inherit_from: .rubocop_todo.yml
 
+AllCops:
+  TargetRubyVersion: 3.0
+
+  Exclude:
+    - 'appveyor.yml'
+    - 'Vagrantfile'
+    - 'scripts/**/*'
+    - 'vendor/**/*'
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 

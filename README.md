@@ -18,7 +18,7 @@ end
 ```
 
 ### Impersonating a service account
-By passing a `nil` password, winrm-elevated will assume that the command should run as a service account:
+By passing a `nil` password, chef-winrm-elevated will assume that the command should run as a service account:
 ```ruby
 require 'chef-winrm'
 require 'chef-winrm-elevated'

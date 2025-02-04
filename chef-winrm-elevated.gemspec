@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
 
   s.author = ['Shawn Neal']
   s.email = ['sneal@sneal.net']
-  s.homepage = 'https://github.com/WinRb/winrm-elevated'
+  s.homepage = 'https://github.com/chef/chef-winrm-elevated'
 
   s.summary = 'Ruby library for running commands as elevated'
   s.description = 'Ruby library for running commands via WinRM as elevated through a scheduled task'
