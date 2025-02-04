@@ -14,7 +14,7 @@ environment:
     - ruby_version: "31"
       winrm_endpoint: http://localhost:5985/wsman
 
-clone_folder: c:\projects\winrm-elevated
+clone_folder: c:\projects\chef-winrm-elevated
 clone_depth: 1
 branches:
   only:
