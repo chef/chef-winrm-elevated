@@ -81,7 +81,7 @@ module WinRM
       end
 
       def elevated_shell_script_content
-        IO.read(File.expand_path("../../chef-winrm-elevated/scripts/elevated_shell.ps1", __dir__))
+        File.read(File.expand_path("../../chef-winrm-elevated/scripts/elevated_shell.ps1", __dir__))
       end
 
       def wrap_in_scheduled_task(script_path, username, password)
