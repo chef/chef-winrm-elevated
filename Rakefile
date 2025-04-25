@@ -20,12 +20,6 @@ RSpec::Core::RakeTask.new(:integration) do |task|
   task.rspec_opts << '-tintegration'
 end
 
-# Run the integration test suite
-RSpec::Core::RakeTask.new(:integration) do |task|
-  task.pattern = "tests/integration/*_spec.rb"
-  task.rspec_opts = ["--color", "-f documentation", "-r ./tests/integration/spec_helper"]
-end
-
 desc "Check Linting and code style."
 task :style do
   require "rubocop/rake_task"
