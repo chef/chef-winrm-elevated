@@ -1,6 +1,6 @@
-require 'chef-winrm' unless defined?(WinRM::Connection)
-require 'chef-winrm-elevated'
-require_relative 'matchers'
+require "chef-winrm" unless defined?(WinRM::Connection)
+require "chef-winrm-elevated"
+require_relative "matchers"
 
 # Creates a WinRM connection for integration tests
 module ConnectionHelper
@@ -16,10 +16,10 @@ module ConnectionHelper
     unless @winrm_config
       path = File.expand_path("#{File.dirname(__FILE__)}/config.yml")
       path = File.expand_path("#{File.dirname(__FILE__)}/config-example.yml") unless File.exist?(path)
-      @winrm_config = symbolize_keys(YAML.safe_load(File.read(path)))
-      @winrm_config[:endpoint] = ENV['winrm_endpoint'] if ENV['winrm_endpoint']
-      @winrm_config[:user] = ENV['winrm_user'] if ENV['winrm_user']
-      @winrm_config[:password] = ENV['winrm_password'] if ENV['winrm_password']
+      @winrm_config = symbolize_keys(YAML.safe_load_file(path))
+      @winrm_config[:endpoint] = ENV["winrm_endpoint"] if ENV["winrm_endpoint"]
+      @winrm_config[:user] = ENV["winrm_user"] if ENV["winrm_user"]
+      @winrm_config[:password] = ENV["winrm_password"] if ENV["winrm_password"]
     end
     @winrm_config
   end

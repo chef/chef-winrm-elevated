@@ -13,5 +13,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require 'chef-winrm' unless defined?(WinRM::Connection)
-require_relative 'chef-winrm/shells/elevated'
+require "chef-winrm" unless defined?(WinRM::Connection)
+require_relative "chef-winrm/shells/elevated"
